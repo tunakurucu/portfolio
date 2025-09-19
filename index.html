@@ -81,23 +81,44 @@
     .island.g{background:radial-gradient(600px 320px at 80% 20%, rgba(0,232,135,.22), transparent 60%)}
     .island.b{background:radial-gradient(600px 320px at 60% 80%, rgba(50,166,255,.22), transparent 60%)}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-      /* === Pricing layout tweaks === */
-  .price-row{
-    display:grid;
-    grid-template-columns:1.2fr .9fr 2fr auto;
-    gap:12px;
-    align-items:start;
-  }
-  .price-row .muted{ line-height:1.55 }
-  .money.small{
-    font-size:14px;
-    font-weight:600;
-    color:var(--muted);
-  }
-  .price-note{ font-size:13px; color:var(--muted); font-style:italic }
-  @media (max-width:920px){
-    .price-row{ grid-template-columns:1fr }
-  }
+    /* === Pricing layout tweaks (aligned columns) === */
+.price-row{
+  display:grid;
+  grid-template-columns:
+    minmax(180px,1.1fr)   /* Hizmet */
+    minmax(140px,.9fr)    /* Süre   */
+    minmax(320px,2fr)     /* Açıklama */
+    minmax(160px,.9fr);   /* Ücret  */
+  gap:16px;
+  align-items:start;
+}
+.price-row > div{min-width:0}
+.price-row .muted{line-height:1.6}
+.money{ text-align:right }
+.money.small{
+  font-size:14px; line-height:1.5; font-weight:600; color:var(--muted);
+  white-space:normal; word-break:normal; max-width:220px; justify-self:end;
+}
+
+/* Ekipman iki sütun */
+.equip-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+}
+.equip{
+  background:linear-gradient(180deg,#121521,#0e1017);
+  border:1px solid #1c1f2a; border-radius:18px; padding:14px;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+}
+.equip .title{font-weight:700}
+.equip .sub{color:var(--muted)}
+.equip .price{border:none; padding:0; background:transparent}
+
+/* Mobile */
+@media (max-width:920px){
+  .price-row{ grid-template-columns:1fr }
+  .money, .money.small{ justify-self:start; text-align:left; max-width:none }
+  .equip-grid{ grid-template-columns:1fr }
+}
   </style>
   <script type="application/ld+json">
   {
@@ -197,7 +218,7 @@
         <div class="muted">maks. 12 Saat / Gün</div>
         <div>
           <span class="muted">Ekipmanlar ile beraber, belirlenen mekânda, belirlenen sürede çekim.</span><br>
-          <small class="price-note">Ekipman listesi belgenin devamındadır*</small>
+          <small class="muted"><em>Ekipman listesi belgenin devamındadır*</em></small>
         </div>
         <div class="money">1250₺ / Saat</div>
       </div>
@@ -209,17 +230,18 @@
         <div class="muted">3 Gün / Video</div>
         <div>
           <span class="muted">İçeriğe uygun şekilde hazırlanan 0–1 dakikalık video.</span><br>
-          <small class="price-note">Daha uzun videolar +750₺/Dk. olarak eklenir*</small>
+          <small class="muted"><em>Daha uzun videolar +750₺/Dk. olarak eklenir*</em></small>
         </div>
         <div class="money">1250₺ / Video</div>
       </div>
     </div>
   </div>
 
-  <!-- EK HİZMETLER -->
+  <!-- EK HİZMETLER (tam hizalı / sabit sütunlar) -->
   <div class="card" style="margin-bottom:16px">
     <h3 style="margin:0 0 8px 0;color:var(--brand-2)">Ek Hizmetler</h3>
 
+    <!-- 1) Proje Dosyası Teslimi -->
     <div class="price" style="margin-bottom:12px">
       <div class="price-row">
         <div><strong>Proje Dosyası Teslimi</strong></div>
@@ -229,20 +251,8 @@
       </div>
     </div>
 
+    <!-- 2) Ham Data Saklama (senin isteğinle 2. sırada) -->
     <div class="price" style="margin-bottom:12px">
-      <div class="price-row">
-        <div><strong>Ekipman Kiralama</strong></div>
-        <div class="muted">10 Saat / Gün</div>
-        <div>
-          <span class="muted">Ekipmanların teslim edilmesi, belirlenen süre sonunda eksiksiz olarak geri teslim alınması.</span><br>
-          <small class="price-note">Hasar oluşması durumunda tamir ücret faturası kiralayana yansıtılır*</small>
-        </div>
-        <!-- NOT: Artık küçük boy -->
-        <div class="money small">Günlük ücretler ekipman listesinde mevcuttur*</div>
-      </div>
-    </div>
-
-    <div class="price">
       <div class="price-row">
         <div><strong>Ham Data Saklama</strong></div>
         <div class="muted">1 Ay</div>
@@ -250,52 +260,76 @@
         <div class="money">250₺ / Ay</div>
       </div>
     </div>
+
+    <!-- 3) Ekipman Kiralama -->
+    <div class="price">
+      <div class="price-row">
+        <div><strong>Ekipman Kiralama</strong></div>
+        <div class="muted">10 Saat / Gün</div>
+        <div>
+          <span class="muted">Ekipmanların teslim edilmesi, belirlenen süre sonunda eksiksiz olarak geri teslim alınması.</span><br>
+          <small class="muted"><em>Hasar oluşması durumunda tamir ücret faturası kiralayana yansıtılır*</em></small>
+        </div>
+        <!-- Küçük ve sarma açık; genişlemiyor -->
+        <div class="money small">Günlük ücretler ekipman listesinde mevcuttur*</div>
+      </div>
+    </div>
   </div>
 
   <!-- EKİPMAN + AÇIKLAMALAR -->
   <div class="grid cols-2" style="gap:16px">
-    <!-- Ekipman Listesi -->
+    <!-- Ekipman Listesi: 2 sütun -->
     <div class="card">
       <h3 style="margin:0 0 8px 0">Ekipman Listesi</h3>
 
-      <div class="price" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Kamera ve Lens</strong><br><span class="muted">Sony FX30 – Tamron 17/70mm 2.8f</span></div>
+      <div class="equip-grid">
+        <!-- Sütun-1 -->
+        <div class="equip">
+          <div>
+            <div class="title">Kamera ve Lens</div>
+            <div class="sub">Sony FX30 – Tamron 17/70mm 2.8f</div>
+          </div>
           <div class="money">2000₺ / Gün</div>
         </div>
-      </div>
 
-      <div class="price" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Gimbal</strong><br><span class="muted">DJI RS4 Pro Combo</span></div>
+        <div class="equip">
+          <div>
+            <div class="title">Gimbal</div>
+            <div class="sub">DJI RS4 Pro Combo</div>
+          </div>
           <div class="money">1500₺ / Gün</div>
         </div>
-      </div>
 
-      <div class="price" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Tripod</strong><br><span class="muted">PDX Video Tripod</span></div>
+        <div class="equip">
+          <div>
+            <div class="title">Tripod</div>
+            <div class="sub">PDX Video Tripod</div>
+          </div>
           <div class="money">500₺ / Gün</div>
         </div>
-      </div>
 
-      <div class="price" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Filtre</strong><br><span class="muted">Kase VND 82mm</span></div>
+        <!-- Sütun-2 -->
+        <div class="equip">
+          <div>
+            <div class="title">Filtre</div>
+            <div class="sub">Kase VND 82mm</div>
+          </div>
           <div class="money">250₺ / Gün</div>
         </div>
-      </div>
 
-      <div class="price" style="margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Monitör</strong><br><span class="muted">Viltrox 6.0’’ Monitör</span></div>
+        <div class="equip">
+          <div>
+            <div class="title">Monitör</div>
+            <div class="sub">Viltrox 6.0’’ Monitör</div>
+          </div>
           <div class="money">750₺ / Gün</div>
         </div>
-      </div>
 
-      <div class="price">
-        <div style="display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap">
-          <div><strong>Hafıza</strong><br><span class="muted">V90 256GB SD</span></div>
+        <div class="equip">
+          <div>
+            <div class="title">Hafıza</div>
+            <div class="sub">V90 256GB SD</div>
+          </div>
           <div class="money">200₺ / Gün</div>
         </div>
       </div>
