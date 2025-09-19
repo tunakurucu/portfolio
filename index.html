@@ -119,6 +119,21 @@
   .money, .money.small{ justify-self:start; text-align:left; max-width:none }
   .equip-grid{ grid-template-columns:1fr }
 }
+
+    /* === Tweaks v2 === */
+.money.nowrap{ white-space:nowrap }
+@media (max-width:920px){ .money.nowrap{ white-space:normal } }
+
+.equip-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px }
+.equip{
+  background:linear-gradient(180deg,#121521,#0e1017);
+  border:1px solid #1c1f2a; border-radius:18px; padding:14px;
+  display:flex; justify-content:space-between; align-items:flex-start; gap:12px;
+}
+.equip .title{ font-weight:600 }
+.equip .sub{ color:var(--muted); font-size:14px }
+.equip .money{ font-size:20px; font-weight:700 } /* eski/sade görünüm */
+@media (max-width:920px){ .equip-grid{ grid-template-columns:1fr } }
   </style>
   <script type="application/ld+json">
   {
@@ -232,12 +247,12 @@
           <span class="muted">İçeriğe uygun şekilde hazırlanan 0–1 dakikalık video.</span><br>
           <small class="muted"><em>Daha uzun videolar +750₺/Dk. olarak eklenir*</em></small>
         </div>
-        <div class="money">1250₺ / Video</div>
+        <div class="money nowrap">1250₺ / Video</div>
       </div>
     </div>
   </div>
 
-  <!-- EK HİZMETLER (tam hizalı / sabit sütunlar) -->
+  <!-- EK HİZMETLER (tam hizalı) -->
   <div class="card" style="margin-bottom:16px">
     <h3 style="margin:0 0 8px 0;color:var(--brand-2)">Ek Hizmetler</h3>
 
@@ -247,11 +262,11 @@
         <div><strong>Proje Dosyası Teslimi</strong></div>
         <div class="muted"><em>Video ile beraber teslim edilir*</em></div>
         <div class="muted">Kurgu ve montajı yapılan videonun proje dosyasının (.prproj) teslimi.</div>
-        <div class="money">750₺ / Dosya</div>
+        <div class="money nowrap">750₺ / Dosya</div>
       </div>
     </div>
 
-    <!-- 2) Ham Data Saklama (senin isteğinle 2. sırada) -->
+    <!-- 2) Ham Data Saklama (senin istediğin gibi) -->
     <div class="price" style="margin-bottom:12px">
       <div class="price-row">
         <div><strong>Ham Data Saklama</strong></div>
@@ -270,85 +285,54 @@
           <span class="muted">Ekipmanların teslim edilmesi, belirlenen süre sonunda eksiksiz olarak geri teslim alınması.</span><br>
           <small class="muted"><em>Hasar oluşması durumunda tamir ücret faturası kiralayana yansıtılır*</em></small>
         </div>
-        <!-- Küçük ve sarma açık; genişlemiyor -->
         <div class="money small">Günlük ücretler ekipman listesinde mevcuttur*</div>
       </div>
     </div>
   </div>
 
-  <!-- EKİPMAN + AÇIKLAMALAR -->
-  <div class="grid cols-2" style="gap:16px">
-    <!-- Ekipman Listesi: 2 sütun -->
-    <div class="card">
-      <h3 style="margin:0 0 8px 0">Ekipman Listesi</h3>
-
-      <div class="equip-grid">
-        <!-- Sütun-1 -->
-        <div class="equip">
-          <div>
-            <div class="title">Kamera ve Lens</div>
-            <div class="sub">Sony FX30 – Tamron 17/70mm 2.8f</div>
-          </div>
-          <div class="money">2000₺ / Gün</div>
-        </div>
-
-        <div class="equip">
-          <div>
-            <div class="title">Gimbal</div>
-            <div class="sub">DJI RS4 Pro Combo</div>
-          </div>
-          <div class="money">1500₺ / Gün</div>
-        </div>
-
-        <div class="equip">
-          <div>
-            <div class="title">Tripod</div>
-            <div class="sub">PDX Video Tripod</div>
-          </div>
-          <div class="money">500₺ / Gün</div>
-        </div>
-
-        <!-- Sütun-2 -->
-        <div class="equip">
-          <div>
-            <div class="title">Filtre</div>
-            <div class="sub">Kase VND 82mm</div>
-          </div>
-          <div class="money">250₺ / Gün</div>
-        </div>
-
-        <div class="equip">
-          <div>
-            <div class="title">Monitör</div>
-            <div class="sub">Viltrox 6.0’’ Monitör</div>
-          </div>
-          <div class="money">750₺ / Gün</div>
-        </div>
-
-        <div class="equip">
-          <div>
-            <div class="title">Hafıza</div>
-            <div class="sub">V90 256GB SD</div>
-          </div>
-          <div class="money">200₺ / Gün</div>
-        </div>
+  <!-- EKİPMAN LİSTESİ — TAM GENİŞLİK -->
+  <div class="card" style="margin-bottom:16px">
+    <h3 style="margin:0 0 8px 0">Ekipman Listesi</h3>
+    <div class="equip-grid">
+      <div class="equip">
+        <div><div class="title">Kamera ve Lens</div><div class="sub">Sony FX30 – Tamron 17/70mm 2.8f</div></div>
+        <div class="money">2000₺ / Gün</div>
+      </div>
+      <div class="equip">
+        <div><div class="title">Gimbal</div><div class="sub">DJI RS4 Pro Combo</div></div>
+        <div class="money">1500₺ / Gün</div>
+      </div>
+      <div class="equip">
+        <div><div class="title">Tripod</div><div class="sub">PDX Video Tripod</div></div>
+        <div class="money">500₺ / Gün</div>
+      </div>
+      <div class="equip">
+        <div><div class="title">Filtre</div><div class="sub">Kase VND 82mm</div></div>
+        <div class="money">250₺ / Gün</div>
+      </div>
+      <div class="equip">
+        <div><div class="title">Monitör</div><div class="sub">Viltrox 6.0’’ Monitör</div></div>
+        <div class="money">750₺ / Gün</div>
+      </div>
+      <div class="equip">
+        <div><div class="title">Hafıza</div><div class="sub">V90 256GB SD</div></div>
+        <div class="money">200₺ / Gün</div>
       </div>
     </div>
+  </div>
 
-    <!-- Önemli Açıklamalar: TAM GENİŞLİK -->
-    <div class="card" style="grid-column:1 / -1">
-      <h3 style="margin:0 0 8px 0">Önemli Açıklamalar</h3>
-      <ul class="muted" style="margin:0; padding-left:20px; line-height:1.7">
-        <li>Çekim süresinin aşılması halinde 1 saatlik ücret eklenir. <em>(İnisiyatif kullanılabilir)</em></li>
-        <li>Çekim esnasında dosya boyutu ve/veya batarya şarjı için 15 dakikalık molalar verilebilir.</li>
-        <li>Kurgu montaj hizmeti başka bir yerden alınacaksa çekim öncesi; fps, aspect ratio, bit vb. değerleri belirtilmelidir.</li>
-        <li>Çekim başlangıcından en geç 6 saat sonra yemek molası verilmelidir.</li>
-        <li>Kurgu montaj işlerinde video başına maks. 3 revize kabul edilir. Aşılması durumunda yeni video olarak ücretlendirilir.</li>
-      </ul>
-    </div>
+  <!-- ÖNEMLİ AÇIKLAMALAR — TAM GENİŞLİK -->
+  <div class="card">
+    <h3 style="margin:0 0 8px 0">Önemli Açıklamalar</h3>
+    <ul class="muted" style="margin:0; padding-left:20px; line-height:1.7">
+      <li>Çekim süresinin aşılması halinde 1 saatlik ücret eklenir. <em>(İnisiyatif kullanılabilir)</em></li>
+      <li>Çekim esnasında dosya boyutu ve/veya batarya şarjı için 15 dakikalık molalar verilebilir.</li>
+      <li>Kurgu montaj hizmeti başka bir yerden alınacaksa çekim öncesi; fps, aspect ratio, bit vb. değerleri belirtilmelidir.</li>
+      <li>Çekim başlangıcından en geç 6 saat sonra yemek molası verilmelidir.</li>
+      <li>Kurgu montaj işlerinde video başına maks. 3 revize kabul edilir. Aşılması durumunda yeni video olarak ücretlendirilir.</li>
+    </ul>
   </div>
 </section>
-
 
     <section id="booking" class="section">
       <h2>Rezervasyon</h2>
