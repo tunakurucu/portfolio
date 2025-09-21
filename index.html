@@ -9,7 +9,7 @@
   <meta property="og:title" content="Kurucu Visuals — Arda Kurucu" />
   <meta property="og:description" content="Portfolyo • Ücretler • Prosedür • İletişim • Rezervasyon" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./og.jpeg" />
+  <meta property="og:image" content="assets/og.jpeg" />
   <meta name="theme-color" content="#070709">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
 
     /* ====== NAV (sadece AKV logosu) ====== */
     .nav{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,7,9,.85),rgba(7,7,9,.5) 75%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
-    .nav-inner{display:flex;align-items:center;justify-content:flex-start;padding:10px 0}
+    .nav-inner{display:flex;align-items:center;justify-content:center;padding:10px 0}
     .logo-btn{position:relative;display:inline-flex;align-items:center;border:0;background:transparent;cursor:pointer;padding:6px 4px;border-radius:12px}
     .logo-btn img{height:36px;width:auto}
     @media (max-width:920px){ .logo-btn img{height:32px} }
@@ -143,14 +143,14 @@
   <header class="nav" aria-label="Site başlığı">
     <div class="container nav-inner">
       <button class="logo-btn" id="logoBtn" aria-expanded="false" aria-controls="navOverlay">
-        <img src="./akv.png" alt="AKV" />
+        <img src="assets/akv.png" alt="AKV" />
         <span class="breath" aria-hidden="true"></span>
       </button>
     </div>
 
     <div class="nav-overlay" id="navOverlay" hidden>
       <div class="nav-panel" role="dialog" aria-modal="true">
-        <img class="nav-hero" src="./akv_header.jpeg" alt="Kurucu Visuals menü görseli"/>
+        <img class="nav-hero" src="assets/akv_header.jpeg" alt="Kurucu Visuals menü görseli"/>
         <div class="nav-links">
           <a href="#work" class="chip">Portfolyo</a>
           <a href="#pricing" class="chip">Ücretler</a>
