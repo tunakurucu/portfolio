@@ -32,11 +32,12 @@
     .nav{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,7,9,.85),rgba(7,7,9,.5) 75%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
     .nav-inner{display:flex;align-items:center;justify-content:flex-start;padding:10px 0}
     .logo-btn{position:relative;display:inline-flex;align-items:center;border:0;background:transparent;cursor:pointer;padding:6px 4px;border-radius:12px}
-    .logo-btn img{height:28px;width:auto}
+    .logo-btn img{height:36px;width:auto}
+    @media (max-width:920px){ .logo-btn img{height:32px} }
     .logo-btn:focus{outline:none;box-shadow:0 0 0 4px rgba(50,166,255,.25)}
     /* nefes efekti */
-    .logo-btn .breath{position:absolute;inset:0;margin:auto;width:36px;height:36px;border-radius:999px;z-index:-1;pointer-events:none}
-    .logo-btn .breath::before{content:"";position:absolute;inset:-10px;background:radial-gradient(circle at 50% 50%, rgba(50,166,255,.35), transparent 55%);border-radius:999px;filter:blur(6px);animation:breath 3.2s ease-in-out infinite}
+    .logo-btn .breath{position:absolute;inset:0;margin:auto;width:44px;height:44px;border-radius:999px;z-index:-1}
+    .logo-btn .breath::before{content:"";position:absolute;inset:-12px;background:radial-gradient(circle at 50% 50%, rgba(50,166,255,.35), transparent 55%);border-radius:999px;filter:blur(6px);animation:breath 3.2s ease-in-out infinite}
     @keyframes breath{0%,100%{transform:scale(.85);opacity:.55}50%{transform:scale(1.05);opacity:.9}}
     @media (prefers-reduced-motion:reduce){.logo-btn .breath::before{animation:none;opacity:.4}}
 
@@ -51,8 +52,11 @@
     @media (max-width:920px){.nav-hero{height:140px}.nav-links{grid-template-columns:repeat(2,1fr)}}
 
     /* ====== HERO (welcome.gif) ====== */
-    .welcome{position:relative;min-height:100dvh;display:grid;place-items:center}
-    .welcome .gif{width:100%;height:100dvh;object-fit:cover;opacity:.96}
+    .welcome{position:relative;display:block}
+    .hero-img{width:100%;height:clamp(60vh, 86vh, 100vh);object-fit:cover;object-position:center;display:block}
+    @media (max-width:920px){
+      .hero-img{height:72vh} /* mobilde daha dikey, daha kısa */
+    }
     .scroll-hint{position:absolute;bottom:18px;left:0;right:0;margin:auto;width:max-content;color:#cbd5e1;opacity:.7;animation:hint 2.4s ease-in-out infinite}
     @keyframes hint{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
@@ -160,13 +164,18 @@
 
   <!-- ====== HERO: karşılama GIF ====== -->
   <section class="welcome" id="welcome">
-    <img class="gif" src="./welcome.gif" alt="Kurucu Visuals karşılama animasyonu"/>
-    <div class="scroll-hint">▼</div>
-  </section>
+  <picture>
+    <!-- Mobil (dikey) karşılama görseli -->
+    <source srcset="assets/welcome1.jpg" media="(max-width: 700px)">
+    <!-- Varsayılan (desktop/tablet) -->
+    <img class="hero-img" src="assets/welcome.jpg" alt="Kurucu Visuals karşılama görseli">
+  </picture>
+  <div class="scroll-hint">▼</div>
+</section>
 
   <main class="container">
     <!-- kısa intro -->
-    <section class="card" style="margin-top:-18px">
+    <section class="card" style="margin-top:-12px">
       <h1 class="title-xxl">Arda Kurucu — <span style="background:linear-gradient(90deg,var(--rgb1),var(--rgb2),var(--rgb3));-webkit-background-clip:text;background-clip:text;color:transparent">Fotoğraf & Video</span></h1>
       <p class="muted">Portre, ürün, etkinlik ve müzik video alanlarında modern, minimal ve neon dokunuşlu işler üretiyorum. Aşağıdan portfolyoya göz atabilir, paket fiyatları inceleyebilir, prosedürü okuyabilir ve takvimimden <strong>rezervasyon</strong> yapabilirsiniz.</p>
     </section>
