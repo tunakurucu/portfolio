@@ -32,12 +32,12 @@
     .nav{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,7,9,.85),rgba(7,7,9,.5) 75%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
     .nav-inner{display:flex;align-items:center;justify-content:center;padding:10px 0}
     .logo-btn{position:relative;display:inline-flex;align-items:center;border:0;background:transparent;cursor:pointer;padding:6px 4px;border-radius:12px}
-    .logo-btn img{height:36px;width:auto}
-    @media (max-width:920px){ .logo-btn img{height:32px} }
+    .logo-btn img{height:42px;width:auto}
+    @media (max-width:920px){ .logo-btn img{height:36px} }
     .logo-btn:focus{outline:none;box-shadow:0 0 0 4px rgba(50,166,255,.25)}
     /* nefes efekti */
-    .logo-btn .breath{position:absolute;inset:0;margin:auto;width:44px;height:44px;border-radius:999px;z-index:-1}
-    .logo-btn .breath::before{content:"";position:absolute;inset:-12px;background:radial-gradient(circle at 50% 50%, rgba(50,166,255,.35), transparent 55%);border-radius:999px;filter:blur(6px);animation:breath 3.2s ease-in-out infinite}
+    .logo-btn .breath{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:999px;z-index:-1}
+    .logo-btn .breath::before{content:"";position:absolute;inset:-14px;background:radial-gradient(circle at 50% 50%, rgba(50,166,255,.35), transparent 55%);filter:blur(7px);animation:breath 3.2s ease-in-out infinite}
     @keyframes breath{0%,100%{transform:scale(.85);opacity:.55}50%{transform:scale(1.05);opacity:.9}}
     @media (prefers-reduced-motion:reduce){.logo-btn .breath::before{animation:none;opacity:.4}}
 
@@ -52,11 +52,9 @@
     @media (max-width:920px){.nav-hero{height:140px}.nav-links{grid-template-columns:repeat(2,1fr)}}
 
     /* ====== HERO (welcome.gif) ====== */
-    .welcome{position:relative;display:block}
-    .hero-img{width:100%;height:clamp(60vh, 86vh, 100vh);object-fit:cover;object-position:center;display:block}
-    @media (max-width:920px){
-      .hero-img{height:72vh} /* mobilde daha dikey, daha kısa */
-    }
+    .welcome{position:relative;display:block;margin-bottom:12px}
+    .hero-img{width:100%;height:clamp(58vh, 80vh, 92vh);object-fit:cover;object-position:center;display:block}
+    @media (max-width:920px){ .hero-img{height:68vh} }
     .scroll-hint{position:absolute;bottom:18px;left:0;right:0;margin:auto;width:max-content;color:#cbd5e1;opacity:.7;animation:hint 2.4s ease-in-out infinite}
     @keyframes hint{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
@@ -80,6 +78,7 @@
     /* Pricing grid (hizalı sütunlar) */
     .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .price{background:linear-gradient(180deg,#121521,#0e1017);border:1px solid #1c1f2a;border-radius:18px;padding:18px}
+    .price .money, .equip .money{ font-weight:800 }
     .price-row{display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(140px,.9fr) minmax(320px,2fr) minmax(160px,.9fr);gap:16px;align-items:start}
     .price-row > div{min-width:0}
     .price-row .muted{line-height:1.6}
@@ -114,7 +113,10 @@
       .prices{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
       .price-row{grid-template-columns:1fr;gap:10px}
-      .money,.money.small,.money.nowrap{justify-self:start;text-align:left;white-space:normal;max-width:none}
+      .money, .money.small{
+        justify-self:start; text-align:left; white-space:normal; max-width:none;
+      }
+      .money.nowrap{ white-space:nowrap; }
       .equip-grid{grid-template-columns:1fr}
       body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
     }
@@ -150,7 +152,6 @@
 
     <div class="nav-overlay" id="navOverlay" hidden>
       <div class="nav-panel" role="dialog" aria-modal="true">
-        <img class="nav-hero" src="assets/akv_header.jpeg" alt="Kurucu Visuals menü görseli"/>
         <div class="nav-links">
           <a href="#work" class="chip">Portfolyo</a>
           <a href="#pricing" class="chip">Ücretler</a>
@@ -177,19 +178,15 @@
     <!-- kısa intro -->
     <section class="card" style="margin-top:-12px">
       <h1 class="title-xxl">Arda Kurucu — <span style="background:linear-gradient(90deg,var(--rgb1),var(--rgb2),var(--rgb3));-webkit-background-clip:text;background-clip:text;color:transparent">Fotoğraf & Video</span></h1>
-      <p class="muted">Portre, ürün, etkinlik ve müzik video alanlarında modern, minimal ve neon dokunuşlu işler üretiyorum. Aşağıdan portfolyoya göz atabilir, paket fiyatları inceleyebilir, prosedürü okuyabilir ve takvimimden <strong>rezervasyon</strong> yapabilirsiniz.</p>
+      <p class="muted">Etkinlik, portre ve mekan çekimleri.</p>
     </section>
 
     <!-- ====== PORTFOLYO ====== -->
     <section id="work" class="section">
       <h2>Portfolyo</h2>
       <div class="grid cols-3" id="portfolio-grid">
-        <a class="work" href="#" data-full="https://images.unsplash.com/photo-1512392253360-dc0c52a80a3c?w=1600">
-          <img loading="lazy"
-               src="https://images.unsplash.com/photo-1512392253360-dc0c52a80a3c?w=800"
-               srcset="https://images.unsplash.com/photo-1512392253360-dc0c52a80a3c?w=480 480w, https://images.unsplash.com/photo-1512392253360-dc0c52a80a3c?w=800 800w, https://images.unsplash.com/photo-1512392253360-dc0c52a80a3c?w=1200 1200w"
-               sizes="(max-width:640px) 100vw, (max-width:920px) 50vw, 33vw"
-               alt="Portre çekimi" />
+        <a class="work" href="#" data-full="assets/portre.jpg">
+          <img loading="lazy" src="assets/portre.jpg" alt="Portre çekimi">
           <div class="cap">Portre — Doğal ışık</div>
         </a>
         <a class="work" href="#" data-full="https://images.unsplash.com/photo-1515169067865-5387ec356754?w=1600">
@@ -200,12 +197,8 @@
                alt="Ürün çekimi" />
           <div class="cap">Ürün — Stüdyo</div>
         </a>
-        <a class="work" href="#" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1600">
-          <img loading="lazy"
-               src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800"
-               srcset="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=480 480w, https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800 800w, https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200 1200w"
-               sizes="(max-width:640px) 100vw, (max-width:920px) 50vw, 33vw"
-               alt="Etkinlik çekimi" />
+        <a class="work" href="#" data-full="assets/etkinlik.jpg">
+          <img loading="lazy" src="assets/etkinlik.jpg" alt="Etkinlik çekimi">
           <div class="cap">Etkinlik</div>
         </a>
       </div>
@@ -213,7 +206,7 @@
 
     <!-- ====== ÜCRETLER ====== -->
     <section id="pricing" class="section">
-      <h2>Hizmet Fiyat Listesi <span class="muted">Eylül, 2025</span></h2>
+      <h2>Hizmet Fiyat Listesi <span class="muted">2025</span></h2>
 
       <div class="card" style="margin-bottom:16px">
         <h3 style="margin:0 0 8px 0;color:var(--rgb2)">Ana Hizmetler</h3>
@@ -266,7 +259,7 @@
       <div class="card" style="margin-bottom:16px">
         <h3 style="margin:0 0 8px 0">Ekipman Listesi</h3>
         <div class="equip-grid">
-          <div class="equip"><div><div class="title">Kamera ve Lens</div><div class="sub">Sony FX30 – Tamron 17/70mm 2.8f</div></div><div class="money">2000₺ / Gün</div></div>
+          <div class="equip"><div><div class="title">Kamera ve Lens</div><div class="sub">Sony FX30 – Tamron 17/70mm 2.8f</div></div><div class="money nowrap">2000₺ / Gün</div></div>
           <div class="equip"><div><div class="title">Gimbal</div><div class="sub">DJI RS4 Pro Combo</div></div><div class="money">1500₺ / Gün</div></div>
           <div class="equip"><div><div class="title">Tripod</div><div class="sub">PDX Video Tripod</div></div><div class="money">500₺ / Gün</div></div>
           <div class="equip"><div><div class="title">Filtre</div><div class="sub">Kase VND 82mm</div></div><div class="money">250₺ / Gün</div></div>
@@ -313,7 +306,7 @@
         <div class="card">
           <h3>Bilgi</h3>
           <p class="muted">İstanbul ve çevresinde hizmet veriyorum. Türkiye geneli için talep üzerine planlama yapıyorum.</p>
-          <p>📧 <a href="mailto:ardakurucu8@gmail.com">ardakurucu8@gmail.com</a><br/>📱 <a href="tel:+905321710401">+90 532 171 04 01</a><br/>📸 <a href="https://www.instagram.com/kurucuvisuals" target="_blank" rel="noopener">@kurucuvisuals</a></p>
+          <p>📧 <a href="mailto:ardakurucu8@gmail.com">ardakurucu8@gmail.com</a><br/>📸 <a href="https://www.instagram.com/kurucuvisuals" target="_blank" rel="noopener">@kurucuvisuals</a></p>
         </div>
       </div>
     </section>
