@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kurucu Visuals — Arda Kurucu | Foto/Video Portfolyo</title>
-  <meta name="description" content="Portfolyo, ücretler, prosedür, rezervasyon ve iletişim. Mobile-first tek sayfa." />
+  <title>Arda Kurucu - kurucuvisuals</title>
+  <meta name="description" content="Portfolyo, ücretler, prosedür, rezervasyon ve iletişim." />
   <!-- Sosyal paylaşım için (og.jpeg kökteyse böyle bırak) -->
-  <meta property="og:title" content="Kurucu Visuals — Arda Kurucu" />
+  <meta property="og:title" content="Arda Kurucu - kurucuvisuals" />
   <meta property="og:description" content="Portfolyo • Ücretler • Prosedür • İletişim • Rezervasyon" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og.jpeg" />
@@ -41,6 +41,29 @@
     @keyframes breath{0%,100%{transform:scale(.85);opacity:.55}50%{transform:scale(1.05);opacity:.9}}
     @media (prefers-reduced-motion:reduce){.logo-btn .breath::before{animation:none;opacity:.4}}
 
+    /* Logo iki yanında yavaş oklar */
+    .logo-wrap{ display:flex; align-items:center; gap:10px; }
+    .logo-arrow{
+      font-size:18px; line-height:1; color:var(--muted); opacity:.7;
+      filter: drop-shadow(0 0 6px rgba(50,166,255,.35));
+      animation: logoArrow 2.4s ease-in-out infinite;
+    }
+    .logo-arrow.left{ --dx: 6px; }    /* soldaki ok sağa doğru hafif yaklaşır */
+    .logo-arrow.right{ --dx: -6px; }  /* sağdaki ok sola doğru hafif yaklaşır */
+
+    @keyframes logoArrow{
+      0%,100%{ transform: translateX(0); opacity:.65 }
+      50%{ transform: translateX(var(--dx)); opacity:.95 }
+    }
+
+    @media (max-width:920px){
+      .logo-arrow{ font-size:16px }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .logo-arrow{ animation:none }
+    }
+
     /* ====== NAV OVERLAY (logo'ya tıklanınca) ====== */
     .nav-overlay[hidden]{display:none}
     .nav-overlay{position:fixed;inset:0;z-index:55;display:grid;place-items:start center;background:rgba(0,0,0,.45);backdrop-filter:blur(10px)}
@@ -70,10 +93,23 @@
     .btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px -12px rgba(50,166,255,.4);background-position:100% 0}
 
     /* Portfolio cards */
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .work{position:relative;overflow:hidden;border-radius:16px;border:1px solid #222537;background:#0f1117}
-    .work img{width:100%;height:260px;object-fit:cover;display:block;filter:saturate(1.05)}
-    .work .cap{position:absolute;inset:auto 10px 10px 10px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);padding:8px 10px;border-radius:10px;font-size:14px}
+    /* 2×2 portfolyo ızgarası + link kutuları (lightbox'a yakalanmaz) */
+    .grid.cols-2{ grid-template-columns: repeat(2,1fr); }
+    .work-tile{
+      position:relative; overflow:hidden; border-radius:16px;
+      border:1px solid #222537; background:#0f1117; display:block;
+    }
+    .work-tile img{ width:100%; height:260px; object-fit:cover; display:block; }
+    .work-tile .cap{
+      position:absolute; left:10px; right:10px; bottom:10px;
+      background:rgba(0,0,0,.55); backdrop-filter:blur(6px);
+      padding:8px 10px; border-radius:10px; font-size:14px;
+    }
+
+    @media (max-width:700px){
+      .grid.cols-2{ grid-template-columns: 1fr; }
+      .work-tile img{ height:220px; }
+    }
 
     /* Pricing grid (hizalı sütunlar) */
     .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -144,10 +180,14 @@
   <!-- ====== NAV: AKV logosu, tıklanınca menü ====== -->
   <header class="nav" aria-label="Site başlığı">
     <div class="container nav-inner">
-      <button class="logo-btn" id="logoBtn" aria-expanded="false" aria-controls="navOverlay">
-        <img src="assets/akv.png" alt="AKV" />
-        <span class="breath" aria-hidden="true"></span>
-      </button>
+      <div class="logo-wrap">
+        <span class="logo-arrow left" aria-hidden="true">›</span>
+        <button class="logo-btn" id="logoBtn" aria-expanded="false" aria-controls="navOverlay">
+          <img src="assets/akv.png" alt="AKV" />
+          <span class="breath" aria-hidden="true"></span>
+        </button>
+        <span class="logo-arrow right" aria-hidden="true">‹</span>
+      </div>
     </div>
 
     <div class="nav-overlay" id="navOverlay" hidden>
@@ -184,144 +224,36 @@
     <!-- ====== PORTFOLYO ====== -->
     <section id="work" class="section">
       <h2>Portfolyo</h2>
-      <div class="grid cols-3" id="portfolio-grid">
-        <a class="work" href="#" data-full="assets/portre.jpg">
-          <img loading="lazy" src="assets/portre.jpg" alt="Portre çekimi">
-          <div class="cap">Portre — Doğal ışık</div>
+
+      <div class="grid cols-2">
+        <!-- 1) Portre -->
+        <a class="work-tile" href="https://example.com/portre" target="_blank" rel="noopener">
+          <img src="assets/portre.jpg" alt="Portre">
+          <div class="cap">Portre</div>
         </a>
-        <a class="work" href="#" data-full="https://images.unsplash.com/photo-1515169067865-5387ec356754?w=1600">
-          <img loading="lazy"
-               src="https://images.unsplash.com/photo-1515169067865-5387ec356754?w=800"
-               srcset="https://images.unsplash.com/photo-1515169067865-5387ec356754?w=480 480w, https://images.unsplash.com/photo-1515169067865-5387ec356754?w=800 800w, https://images.unsplash.com/photo-1515169067865-5387ec356754?w=1200 1200w"
-               sizes="(max-width:640px) 100vw, (max-width:920px) 50vw, 33vw"
-               alt="Ürün çekimi" />
-          <div class="cap">Ürün — Stüdyo</div>
-        </a>
-        <a class="work" href="#" data-full="assets/etkinlik.jpg">
-          <img loading="lazy" src="assets/etkinlik.jpg" alt="Etkinlik çekimi">
+
+        <!-- 2) Etkinlik -->
+        <a class="work-tile" href="https://example.com/etkinlik" target="_blank" rel="noopener">
+          <img src="assets/etkinlik.jpg" alt="Etkinlik">
           <div class="cap">Etkinlik</div>
+        </a>
+
+        <!-- 3) Sinema -->
+        <a class="work-tile" href="https://example.com/sinema" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?w=1200" alt="Sinema">
+          <div class="cap">Sinema</div>
+        </a>
+
+        <!-- 4) Mekan -->
+        <a class="work-tile" href="https://example.com/mekan" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=1200" alt="Mekan">
+          <div class="cap">Mekan</div>
         </a>
       </div>
     </section>
 
     <!-- ====== ÜCRETLER ====== -->
     <section id="pricing" class="section">
-      <h2>Hizmet Fiyat Listesi <span class="muted">2025</span></h2>
-
-      <div class="card" style="margin-bottom:16px">
-        <h3 style="margin:0 0 8px 0;color:var(--rgb2)">Ana Hizmetler</h3>
-        <div class="price" style="margin-bottom:12px">
-          <div class="price-row">
-            <div><strong>Profesyonel Çekim</strong></div>
-            <div class="muted">maks. 12 Saat / Gün</div>
-            <div><span class="muted">Ekipmanlar ile beraber, belirlenen mekânda, belirlenen sürede çekim.</span><br><small class="muted"><em>Ekipman listesi belgenin devamındadır*</em></small></div>
-            <div class="money">1250₺ / Saat</div>
-          </div>
-        </div>
-        <div class="price">
-          <div class="price-row">
-            <div><strong>Kurgu ve Montaj</strong></div>
-            <div class="muted">3 Gün / Video</div>
-            <div><span class="muted">İçeriğe uygun şekilde hazırlanan 0–1 dakikalık video.</span><br><small class="muted"><em>Daha uzun videolar +750₺/Dk. olarak eklenir*</em></small></div>
-            <div class="money nowrap">1250₺ / Video</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-bottom:16px">
-        <h3 style="margin:0 0 8px 0;color:var(--rgb3)">Ek Hizmetler</h3>
-
-      <div class="price" style="margin-bottom:12px">
-        <div style="display:grid;grid-template-columns:1.2fr .8fr 2fr auto;gap:8px;align-items:center">
-          <div><strong>Proje Dosyası Teslimi (prproj)</strong></div>
-          <div class="muted">—</div>
-          <div class="muted">Kurgu/montajı yapılan videonun proje dosyası teslimi.</div>
-          <div class="money">750₺ / Dosya</div>
-        </div>
-      </div>
-
-      <div class="price" style="margin-bottom:12px">
-        <div style="display:grid;grid-template-columns:1.2fr .8fr 2fr auto;gap:8px;align-items:center">
-          <div><strong>Ekipman Kiralama</strong></div>
-          <div class="muted">10 Saat / Gün</div>
-          <div class="muted">Fiyat, aşağıdaki ekipman listesine göre hesaplanır.</div>
-          <div class="money">—</div>
-        </div>
-      </div>
-
-      <div class="price">
-        <div style="display:grid;grid-template-columns:1.2fr .8fr 2fr auto;gap:8px;align-items:center">
-          <div><strong>Ham Data Saklama</strong></div>
-          <div class="muted">1 Ay</div>
-          <div class="muted">250GB’a kadar ham verinin bulutta saklanması.</div>
-          <div class="money">250₺ / Ay</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ALTA İKİ KOLON: EKİPMAN/AÇIKLAMALAR -->
-    <div class="grid cols-2">
-      <!-- Ekipman Listesi -->
-      <div class="card">
-        <h3 style="margin-top:0">Ekipman Listesi</h3>
-
-        <div class="price" style="margin-bottom:10px">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Kamera & Lens</strong><br><span class="muted">Sony FX30 · Tamron 17–70mm f/2.8</span></div>
-            <div class="money">2000₺ / Gün</div>
-          </div>
-        </div>
-
-        <div class="price" style="margin-bottom:10px">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Gimbal</strong><br><span class="muted">DJI RS4 Pro Combo</span></div>
-            <div class="money">1500₺ / Gün</div>
-          </div>
-        </div>
-
-        <div class="price" style="margin-bottom:10px">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Tripod</strong><br><span class="muted">PGY Video Tripod</span></div>
-            <div class="money">500₺ / Gün</div>
-          </div>
-        </div>
-
-        <div class="price" style="margin-bottom:10px">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Filtre</strong><br><span class="muted">Kase VND + (model adını teyitle)</span></div>
-            <div class="money">750₺ / Gün</div>
-          </div>
-        </div>
-
-        <div class="price" style="margin-bottom:10px">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Monitör</strong><br><span class="muted">Viltrox 6.0&quot; Monitör</span></div>
-            <div class="money">750₺ / Gün</div>
-          </div>
-        </div>
-
-        <div class="price">
-          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center">
-            <div><strong>Hafıza</strong><br><span class="muted">V90 256GB SD</span></div>
-            <div class="money">200₺ / Gün</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Önemli Açıklamalar -->
-      <div class="card">
-        <h3 style="margin-top:0">Önemli Açıklamalar</h3>
-        <ul class="muted" style="margin:0 0 6px 18px;line-height:1.6">
-          <li>Çekim süresi aşılırsa saatlik ücret eklenir. <em>(metindeki detayı teyitle)</em></li>
-          <li>Kurgu/montaj hizmetinde revizyon sayısı ve kapsamı metinde var; <em>tam okuyamadım</em> — bana yaz, ekleyeyim.</li>
-          <li>Çekim günü/yer değişikliği ve iptal koşulları metinde var; <em>tam okuyamadım</em>.</li>
-          <li>Renk düzenleme ve teslim formatları metinde geçiyor; gerekirse ayrıntı ekleyebilirim.</li>
-        </ul>
-        <small class="muted">Bu maddeleri netleştirirsen, burayı final metninle güncelleyeyim.</small>
-      </div>
-    </div>
-  </section>
-
       <h2>Hizmet Fiyat Listesi <span class="muted">2025</span></h2>
 
       <div class="card" style="margin-bottom:16px">
