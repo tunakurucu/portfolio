@@ -7,6 +7,13 @@
 			"command": "start index.html",
 			"isBackground": false,
 			"group": "build"
+		},
+		{
+			"label": "Open portre.html in browser",
+			"type": "shell",
+			"command": "start portre.html",
+			"isBackground": false,
+			"group": "build"
 		}
 	]
 }

@@ -70,6 +70,17 @@
     .nav-panel{width:min(540px,94vw);margin-top:56px;background:linear-gradient(180deg,#0f1117,#0b0c10);border:1px solid #1c1f2a;border-radius:28px;padding:18px 16px 22px;position:relative;overflow:hidden}
     .nav-hero{width:100%;height:180px;object-fit:cover;border-radius:16px;opacity:.9}
     .nav-links{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:12px}
+    @media (max-width:700px){
+      .nav-panel{width:min(98vw,380px);padding:10px 2px 14px;}
+      .nav-links{flex-direction:row;gap:6px;}
+      .chip, .chip.primary{
+        padding:10px 8px;
+        font-size:1rem;
+        min-width:0;
+        max-width:100px;
+        width:auto;
+      }
+    }
     .chip{display:flex;align-items:center;justify-content:center;padding:14px 28px;font-size:1.13rem;border-radius:999px;border:1px solid #222537;background:#0f1117}
     .chip.primary{background-image:linear-gradient(90deg,var(--rgb1),var(--rgb2),var(--rgb3));background-size:200% 200%;color:#061015;font-weight:700}
     @media (max-width:920px){.nav-hero{height:140px}.nav-links{grid-template-columns:repeat(2,1fr)}.chip.primary{grid-column:1 / -1;justify-self:center;max-width:300px}}
@@ -226,25 +237,25 @@
 
       <div class="grid cols-2">
         <!-- 1) Portre -->
-        <a class="work-tile" href="https://example.com/portre" target="_blank" rel="noopener">
+        <a class="work-tile" href="portre.html">
           <img src="assets/portre.jpg" alt="Portre">
           <div class="cap">Portre</div>
         </a>
 
         <!-- 2) Etkinlik -->
-        <a class="work-tile" href="https://example.com/etkinlik" target="_blank" rel="noopener">
+        <a class="work-tile" href="etkinlik.html">
           <img src="assets/etkinlik.jpg" alt="Etkinlik">
           <div class="cap">Etkinlik</div>
         </a>
 
         <!-- 3) Sinema -->
-        <a class="work-tile" href="https://example.com/sinema" target="_blank" rel="noopener">
+        <a class="work-tile" href="sinema.html">
           <img src="assets/sinema.jpg" alt="Sinema">
           <div class="cap">Sinema</div>
         </a>
 
         <!-- 4) Marka -->
-        <a class="work-tile" href="https://example.com/marka" target="_blank" rel="noopener">
+        <a class="work-tile" href="marka.html">
           <img src="assets/marka.jpg" alt="Marka">
           <div class="cap">Marka</div>
         </a>
