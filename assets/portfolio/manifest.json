@@ -1,0 +1,422 @@
+{
+  "target_root": "/Users/tkurucu/Documents/Codex/2026-06-26/tunakurucu-portfolio-git-https-github-com/repo/assets/portfolio",
+  "categories": {
+    "creative": 10,
+    "etkinlik": 42,
+    "portre": 12,
+    "sinema": 3,
+    "videography": 15
+  },
+  "files": [
+    {
+      "source": "Site - Portfolyo1/Creative/IMG_5757.jpg",
+      "target": "portfolio/creative/p1-creative-img-5757.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo1/Creative/IMG_5758.JPG",
+      "target": "portfolio/creative/p1-creative-img-5758.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo1/Creative/IMG_5767.jpg",
+      "target": "portfolio/creative/p1-creative-img-5767.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo1/Creative/IMG_5771.jpg",
+      "target": "portfolio/creative/p1-creative-img-5771.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo1/Creative/IMG_5773.jpg",
+      "target": "portfolio/creative/p1-creative-img-5773.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/AKV06779-1.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-akv06779-1.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/AKV07455.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-akv07455.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC01688-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc01688-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC02008.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc02008.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC04753-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc04753-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC04926-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc04926-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05025.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05025.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05054-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05054-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05149.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05149.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05411.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05411.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05509.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05509.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05700.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05700.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05860.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05860.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC05889-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc05889-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC06022.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc06022.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC06025.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc06025.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC06029.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc06029.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC07663_Original.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc07663-original.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/DSC09278.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-dsc09278.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/IMG_0118.JPG",
+      "target": "portfolio/etkinlik/p1-etkinlik-img-0118.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Etkinlik/genç lt Link.jpg",
+      "target": "portfolio/etkinlik/p1-etkinlik-genc-lt-link.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo1/Portre/AKV02306-Edit kopya.png",
+      "target": "portfolio/portre/p1-portre-akv02306-edit-kopya.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo1/Portre/DSC07315.jpg",
+      "target": "portfolio/portre/p1-portre-dsc07315.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo1/Portre/DSC08372-Enhanced-NR.jpg",
+      "target": "portfolio/portre/p1-portre-dsc08372-enhanced-nr.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo1/Portre/DSC08391.jpg",
+      "target": "portfolio/portre/p1-portre-dsc08391.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo1/Sinema/Dark Place - Bertan Arda Kurucu.mp4",
+      "target": "portfolio/sinema/p1-sinema-dark-place-bertan-arda-kurucu.mp4",
+      "category": "sinema"
+    },
+    {
+      "source": "Site - Portfolyo1/Sinema/Happier Than Ever-Clip.mp4",
+      "target": "portfolio/sinema/p1-sinema-happier-than-ever-clip.mp4",
+      "category": "sinema"
+    },
+    {
+      "source": "Site - Portfolyo1/Sinema/Vasiyet - Kısa Film-002.mp4",
+      "target": "portfolio/sinema/p1-sinema-vasiyet-ksa-film-002.mp4",
+      "category": "sinema"
+    },
+    {
+      "source": "Site - Portfolyo1/Videography/hype/Alp Ertürk/AKV09445.jpg",
+      "target": "portfolio/videography/hype/p1-videography-akv09445.jpg",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo1/Videography/hype/Sapanca/sapanca çıktı 2.mp4",
+      "target": "portfolio/videography/hype/p1-videography-sapanca-ckt-2.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo1/Videography/kurumsal/Ebebek/Life Ebebek reel.mp4",
+      "target": "portfolio/videography/kurumsal/p1-videography-life-ebebek-reel.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo2/Creative/IMG_5759.jpg",
+      "target": "portfolio/creative/p2-creative-img-5759.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo2/Creative/IMG_5762.jpg",
+      "target": "portfolio/creative/p2-creative-img-5762.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo2/Creative/IMG_5763.jpg",
+      "target": "portfolio/creative/p2-creative-img-5763.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo2/Creative/IMG_5769.jpg",
+      "target": "portfolio/creative/p2-creative-img-5769.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo2/Creative/IMG_5778.jpg",
+      "target": "portfolio/creative/p2-creative-img-5778.jpg",
+      "category": "creative"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC00024-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc00024-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC01894.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc01894.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC01936.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc01936.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC03216.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc03216.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC05054-Enhanced-NR (1).jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc05054-enhanced-nr-1.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC05155.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc05155.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC05240.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc05240.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC05393.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc05393.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC05869-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc05869-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC09393.JPEG",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc09393.jpeg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/DSC09399.JPEG",
+      "target": "portfolio/etkinlik/p2-etkinlik-dsc09399.jpeg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Etkinlik/dramatik sarı kopya.jpg",
+      "target": "portfolio/etkinlik/p2-etkinlik-dramatik-sar-kopya.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo2/Portre/DSC00116.jpg",
+      "target": "portfolio/portre/p2-portre-dsc00116.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo2/Portre/DSC07811.jpg",
+      "target": "portfolio/portre/p2-portre-dsc07811.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo2/Videography/hype/Alp Ertürk/Çalkala çıktı 3.mp4",
+      "target": "portfolio/videography/hype/p2-videography-calkala-ckt-3.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo2/Videography/kurumsal/LifebyFakir/Life Çocukfest.mp4",
+      "target": "portfolio/videography/kurumsal/p2-videography-life-cocukfest.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo2/Videography/kurumsal/Polo Binicilik/kurucuvisuasl polo edit son.mp4",
+      "target": "portfolio/videography/kurumsal/p2-videography-kurucuvisuasl-polo-edit-son.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/AKV07450.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-akv07450.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC00350-Enhanced-NR-2.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc00350-enhanced-nr-2.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC04922.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc04922.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC05179.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc05179.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC05847.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc05847.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC05869-Enhanced-NR-2.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc05869-enhanced-nr-2.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC06042-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc06042-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC06103.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc06103.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Etkinlik/DSC09994-Enhanced-NR.jpg",
+      "target": "portfolio/etkinlik/p3-etkinlik-dsc09994-enhanced-nr.jpg",
+      "category": "etkinlik"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/AKV01868 kopya.png",
+      "target": "portfolio/portre/p3-portre-akv01868-kopya.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/AKV01951 kopya.png",
+      "target": "portfolio/portre/p3-portre-akv01951-kopya.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/AKV02104.png",
+      "target": "portfolio/portre/p3-portre-akv02104.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/AKV02311-Edit kopya.png",
+      "target": "portfolio/portre/p3-portre-akv02311-edit-kopya.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/AKV02337-Edit kopya.png",
+      "target": "portfolio/portre/p3-portre-akv02337-edit-kopya.png",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Portre/Tanabay Sasha.jpg",
+      "target": "portfolio/portre/p3-portre-tanabay-sasha.jpg",
+      "category": "portre"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/hype/Alp Ertürk/AKV09453.jpg",
+      "target": "portfolio/videography/hype/p3-videography-akv09453.jpg",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/hype/Sapanca/citizen2.mp4",
+      "target": "portfolio/videography/hype/p3-videography-citizen2.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Dance & More/d&m Doğum günü.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-d-m-dogum-gunu.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Dance & More/d&m new year.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-d-m-new-year.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/EsKariyer/çıktı v1.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-ckt-v1.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Kimmi/kimmi 1.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-kimmi-1.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Lubemak/Lubemak Lounge çıktı v3..mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-lubemak-lounge-ckt-v3.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Society-İstikbal/İstikbal x Society şubat yatay bs reel.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-istikbal-x-society-subat-yatay-bs-reel.mp4",
+      "category": "videography"
+    },
+    {
+      "source": "Site - Portfolyo3/Videography/kurumsal/Society-İstikbal/v.2 İstikbal x Society şubat dikey bs reel.mp4",
+      "target": "portfolio/videography/kurumsal/p3-videography-v-2-istikbal-x-society-subat-dikey-bs-reel.mp4",
+      "category": "videography"
+    }
+  ]
+}

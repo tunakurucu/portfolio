@@ -3,65 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Etkinlik Çekimleri - Arda Kurucu</title>
-  <meta name="description" content="Etkinlik fotoğraf ve video çekimleri, örnekler." />
-  <meta property="og:title" content="Etkinlik Çekimleri - Arda Kurucu" />
-  <meta property="og:description" content="Etkinlik fotoğraf ve video çekimleri, örnekler." />
+  <title>Motion - Arda Kurucu</title>
+  <meta name="description" content="Sahne, spor ve hareket odaklı fotoğraf seçkisi." />
+  <meta property="og:title" content="Motion - Arda Kurucu" />
+  <meta property="og:description" content="Sahne, spor ve hareket odaklı fotoğraf seçkisi." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/og.jpeg" />
   <meta name="theme-color" content="#070709">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body{background:#070709;color:#f5f7fa;font-family:Inter,sans-serif;margin:0}
-    .container{width:min(1100px,94%);margin-inline:auto}
-    .nav{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(7,7,9,.85),rgba(7,7,9,.5) 75%,transparent);backdrop-filter:saturate(1.2) blur(8px)}
-    .nav-inner{display:flex;align-items:center;justify-content:center;padding:10px 0}
-    .logo-btn{display:inline-flex;align-items:center;border:0;background:transparent;cursor:pointer;padding:6px 4px;border-radius:12px}
-    .logo-btn img{height:42px;width:auto}
-    .logo-btn:focus{outline:none;box-shadow:0 0 0 4px rgba(50,166,255,.25)}
-    .section{padding:36px 0}
-    .section h2{font-size:28px;margin:0 0 14px}
-    .grid{display:grid;gap:16px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
-    @media (max-width:600px){.grid.cols-3{grid-template-columns:1fr}}
-    .card{background:#0e0f14;border:1px solid #1c1f2a;border-radius:18px;padding:22px}
-    .work-img{width:100%;height:340px;object-fit:cover;border-radius:12px;box-shadow:0 2px 16px #0004;margin-bottom:10px}
-    .caption{font-size:15px;color:#9aa0a6;text-align:center}
-    a.back{display:inline-block;margin:18px 0 0 0;color:#32a6ff;text-decoration:underline;font-weight:600}
-  </style>
+  <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="logo-btn" title="Anasayfa">
-        <img src="assets/akv.png" alt="AKV" />
-      </a>
+  <header class="archive-nav">
+    <div class="archive-shell archive-nav-inner">
+      <a href="index.html#work" class="back-link">← Portfolyo</a>
+      <a href="index.html" class="brand" aria-label="Anasayfa"><img src="assets/akv.png" alt="AKV"></a>
     </div>
   </header>
-  <main class="container">
-    <section class="section">
-      <h2>Etkinlik Çekimleri</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <img src="assets/etkinlik1.jpg" alt="Etkinlik 1" class="work-img" />
-          <div class="caption">Etkinlik - Konser</div>
-        </div>
-        <div class="card">
-          <img src="assets/etkinlik2.jpg" alt="Etkinlik 2" class="work-img" />
-          <div class="caption">Etkinlik - Konferans</div>
-        </div>
-        <div class="card">
-          <video class="work-img" controls poster="assets/etkinlik3.jpg"><source src="assets/etkinlik3.mp4" type="video/mp4">Tarayıcınız video etiketini desteklemiyor.</video>
-          <div class="caption">Etkinlik - Aftermovie</div>
-        </div>
-        <!-- Yeni etkinlik fotoğrafı veya videosu eklemek için yukarıdaki gibi kart ekleyin -->
-      </div>
-      <a href="index.html#work" class="back">← Tüm portfolyoya dön</a>
+
+  <main class="archive-shell">
+    <section class="archive-hero">
+      <h1 class="archive-title">Motion</h1>
+    </section>
+
+    <section class="masonry" aria-label="Motion portfolyo seçkisi">
+      <button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-akv06779-1.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-akv06779-1.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-akv07455.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-akv07455.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc01688-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc01688-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc02008.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc02008.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc04753-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc04753-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc04926-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc04926-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05025.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05025.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05054-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05054-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05149.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05149.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05411.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05411.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05509.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05509.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05700.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05700.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05860.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05860.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc05889-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc05889-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc06022.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc06022.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc06025.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc06025.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc06029.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc06029.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc07663-original.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc07663-original.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-dsc09278.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-dsc09278.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-img-0118.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-img-0118.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p1-etkinlik-genc-lt-link.jpg"><img src="assets/portfolio/etkinlik/p1-etkinlik-genc-lt-link.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc00024-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc00024-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc01894.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc01894.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc01936.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc01936.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc03216.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc03216.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc05054-enhanced-nr-1.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc05054-enhanced-nr-1.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc05155.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc05155.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc05240.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc05240.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc05393.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc05393.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc05869-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc05869-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc09393.jpeg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc09393.jpeg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dsc09399.jpeg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dsc09399.jpeg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p2-etkinlik-dramatik-sar-kopya.jpg"><img src="assets/portfolio/etkinlik/p2-etkinlik-dramatik-sar-kopya.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-akv07450.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-akv07450.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc00350-enhanced-nr-2.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc00350-enhanced-nr-2.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc04922.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc04922.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc05179.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc05179.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc05847.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc05847.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc05869-enhanced-nr-2.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc05869-enhanced-nr-2.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc06042-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc06042-enhanced-nr.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc06103.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc06103.jpg" alt="" loading="lazy"></button><button class="media-item" type="button" data-type="image" data-src="assets/portfolio/etkinlik/p3-etkinlik-dsc09994-enhanced-nr.jpg"><img src="assets/portfolio/etkinlik/p3-etkinlik-dsc09994-enhanced-nr.jpg" alt="" loading="lazy"></button>
     </section>
   </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" type="button" aria-label="Kapat">×</button>
+  </div>
+
+  <script src="gallery.js"></script>
 </body>
 </html>

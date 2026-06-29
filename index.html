@@ -139,6 +139,8 @@
       border:1px solid #222537; background:#0f1117; display:block;
     }
     .work-tile img{ width:100%; height:260px; object-fit:cover; display:block; }
+    .work-tile.featured{ grid-column:1 / -1; }
+    .work-tile.featured img{ height:300px; }
     .work-tile .cap{
       position:absolute; left:10px; right:10px; bottom:10px;
       background:rgba(0,0,0,.55); backdrop-filter:blur(6px);
@@ -148,6 +150,7 @@
     @media (max-width:700px){
       .grid.cols-2{ grid-template-columns: 1fr; }
       .work-tile img{ height:220px; }
+      .work-tile.featured img{ height:220px; }
     }
 
     /* Pricing grid (hizalı sütunlar) */
@@ -256,7 +259,7 @@
     <!-- kısa intro -->
     <section class="card" style="margin-top:-12px">
       <h1 class="title-xxl"><span style="background:linear-gradient(90deg,var(--rgb1),var(--rgb2),var(--rgb3));-webkit-background-clip:text;background-clip:text;color:transparent">4K Fotoğraf & Video</span></h1>
-      <p class="muted">Etkinlik, portre, mekan ve marka çekimleri.</p>
+      <p class="muted">Motion, portre, creative, sinema ve videography çekimleri.</p>
     </section>
 
     <!-- ====== PORTFOLYO ====== -->
@@ -270,10 +273,10 @@
           <div class="cap">Portre</div>
         </a>
 
-        <!-- 2) Etkinlik -->
+        <!-- 2) Motion -->
         <a class="work-tile" href="etkinlik.html">
-          <img src="assets/etkinlik.jpg" alt="Etkinlik">
-          <div class="cap">Etkinlik</div>
+          <img src="assets/etkinlik.jpg" alt="Motion">
+          <div class="cap">Motion</div>
         </a>
 
         <!-- 3) Sinema -->
@@ -282,10 +285,16 @@
           <div class="cap">Sinema</div>
         </a>
 
-        <!-- 4) Marka -->
-        <a class="work-tile" href="marka.html">
-          <img src="assets/marka.jpg" alt="Marka">
-          <div class="cap">Marka</div>
+        <!-- 4) Videography -->
+        <a class="work-tile" href="videography.html">
+          <img src="assets/videography.jpg" alt="Videography">
+          <div class="cap">Videography</div>
+        </a>
+
+        <!-- 5) Creative -->
+        <a class="work-tile featured" href="creative.html">
+          <img src="assets/portfolio/creative/p1-creative-img-5757.jpg" alt="Creative">
+          <div class="cap">Creative</div>
         </a>
       </div>
     </section>
