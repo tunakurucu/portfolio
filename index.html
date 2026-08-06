@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; media-src 'self'; connect-src 'none'; base-uri 'none'; form-action https://formspree.io; frame-ancestors 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Arda Kurucu - kurucuvisuals</title>
   <meta name="description" content="Portfolyo, hizmetler, prosedür, rezervasyon ve iletişim." />
   <!-- Sosyal pay          <div class="equip"><div><div class="title">Monitör</div><div class="sub">Viltrox 6.0'' Monitör</div></div></div>aşım için (og.jpeg kökteyse böyle bırak) -->
@@ -178,11 +180,6 @@
     input:focus, textarea:focus{outline:none;border-color:var(--rgb3);box-shadow:0 0 0 4px rgba(50,166,255,.25)}
 
     .footer{padding:30px 0;color:#98a2b3;border-top:1px solid #1c1f2a;margin-top:30px}
-
-    /* Lightbox */
-    .lb{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.85);z-index:80}
-    .lb img{max-width:min(92vw,1200px);max-height:86vh;border-radius:14px}
-    .lb.show{display:flex}
 
     /* ====== Mobile first ====== */
     @media (max-width:920px){
@@ -395,7 +392,7 @@
         <div class="card">
           <h3>Bilgi</h3>
           <p class="muted">İstanbul ve çevresinde hizmet veriyorum.</p>
-          <p>📧 <a href="mailto:ardakurucu8@gmail.com" style="color:var(--rgb3)">ardakurucu8@gmail.com</a><br/>📸 <a href="https://www.instagram.com/kurucuvisuals" target="_blank" rel="noopener" style="color:var(--rgb3)">@kurucuvisuals</a></p>
+          <p>📧 <a href="mailto:ardakurucu8@gmail.com" style="color:var(--rgb3)">ardakurucu8@gmail.com</a><br/>📸 <a href="https://www.instagram.com/kurucuvisuals" target="_blank" rel="noopener noreferrer" style="color:var(--rgb3)">@kurucuvisuals</a></p>
         </div>
       </div>
     </section>
@@ -408,20 +405,9 @@
     <a href="#contact" class="btn btn-full chip primary" style="font-size:1.15rem;max-width:340px;width:100%;margin:0 auto;justify-content:center;display:flex;">İletişime Geçin</a>
   </div>
 
-  <!-- Lightbox -->
-  <div class="lb" id="lb" aria-hidden="true" role="dialog" tabindex="-1"><img alt="Büyük görsel"/></div>
-
   <script>
     // Yıl
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Lightbox
-    const lb=document.getElementById('lb'); const lbImg=lb.querySelector('img');
-    document.querySelectorAll('.work').forEach(w=>{
-      w.addEventListener('click',e=>{e.preventDefault();lbImg.src=w.dataset.full;lb.classList.add('show');lb.focus()})
-    });
-    lb.addEventListener('click',()=>lb.classList.remove('show'));
-    window.addEventListener('keydown',e=>{if(e.key==='Escape') lb.classList.remove('show')});
 
     // Logo → overlay
     const logoBtn = document.getElementById('logoBtn');
