@@ -1,11 +1,27 @@
 const lightbox = document.getElementById('lightbox');
-const closeButton = lightbox.querySelector('.lightbox-close');
-const mediaButtons = [...document.querySelectorAll('.media-item')];
-const galleryItems = mediaButtons.map((item) => ({
-  type: item.dataset.type,
-  src: item.dataset.src,
-  trigger: item,
-}));
+const closeButton = lightbox && lightbox.querySelector('.lightbox-close');
+
+if (!lightbox || !closeButton) {
+  throw new Error('gallery.js: missing #lightbox container or .lightbox-close button; gallery not initialised.');
+}
+
+const galleryItems = [...document.querySelectorAll('.media-item')]
+  .filter((item) => {
+    if (item.dataset.src) return true;
+    console.error('gallery.js: skipping .media-item without data-src', item);
+    return false;
+  })
+  .map((item) => ({
+    type: item.dataset.type,
+    src: item.dataset.src,
+    trigger: item,
+  }));
+
+const errorMessage = document.createElement('p');
+errorMessage.className = 'lightbox-error';
+errorMessage.setAttribute('role', 'alert');
+errorMessage.hidden = true;
+errorMessage.textContent = 'Bu icerik yuklenemedi.';
 
 const stage = document.createElement('div');
 stage.className = 'lightbox-stage';
@@ -23,7 +39,7 @@ nextButton.type = 'button';
 nextButton.setAttribute('aria-label', 'Sonraki calisma');
 nextButton.innerHTML = '<span aria-hidden="true">›</span>';
 
-lightbox.append(stage, previousButton, nextButton);
+lightbox.append(stage, errorMessage, previousButton, nextButton);
 
 let currentIndex = 0;
 let lastFocusedTrigger = null;
@@ -32,6 +48,15 @@ let touchStartY = 0;
 let touchDeltaX = 0;
 let touchDeltaY = 0;
 let isPointerDown = false;
+
+function showError(item, detail) {
+  console.error(`gallery.js: failed to load ${item.type || 'media'} "${item.src}"`, detail || '');
+  errorMessage.hidden = false;
+}
+
+function clearError() {
+  errorMessage.hidden = true;
+}
 
 function isLightboxOpen() {
   return lightbox.classList.contains('show');
@@ -53,13 +78,20 @@ function clearStage() {
 function createMedia(item, direction) {
   const media = document.createElement(item.type === 'video' ? 'video' : 'img');
   media.className = `lightbox-media lightbox-media-enter-${direction}`;
+  media.addEventListener('error', () => showError(item, media.error), { once: true });
   media.src = item.src;
 
   if (item.type === 'video') {
     media.controls = true;
-    media.autoplay = true;
     media.playsInline = true;
     media.preload = 'metadata';
+    const playback = media.play();
+    if (playback && typeof playback.catch === 'function') {
+      playback.catch((error) => {
+        // Autoplay can be blocked by the browser; controls remain available.
+        console.warn(`gallery.js: autoplay blocked for "${item.src}"`, error);
+      });
+    }
   } else {
     media.alt = '';
     media.decoding = 'async';
@@ -73,12 +105,17 @@ function preloadNearbyImages() {
     const item = galleryItems[(currentIndex + offset + galleryItems.length) % galleryItems.length];
     if (!item || item.type !== 'image') return;
     const image = new Image();
+    image.addEventListener('error', () => {
+      console.warn(`gallery.js: preload failed for "${item.src}"`);
+    }, { once: true });
     image.src = item.src;
   });
 }
 
 function renderMedia(direction = 'next') {
   if (!galleryItems.length) return;
+
+  clearError();
 
   const outgoingMedia = [...stage.querySelectorAll('.lightbox-media')];
   const media = createMedia(galleryItems[currentIndex], direction);
@@ -125,6 +162,7 @@ function openLightbox(index) {
 
 function closeLightbox() {
   clearStage();
+  clearError();
   lightbox.classList.remove('show');
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('lightbox-open');
@@ -134,8 +172,15 @@ function closeLightbox() {
   }
 }
 
-mediaButtons.forEach((item, index) => {
-  item.addEventListener('click', () => {
+document.addEventListener('error', (event) => {
+  const target = event.target;
+  if (!(target instanceof Element) || !target.closest('.media-item')) return;
+  console.error(`gallery.js: thumbnail failed to load "${target.getAttribute('src')}"`);
+  target.closest('.media-item').classList.add('media-item-broken');
+}, true);
+
+galleryItems.forEach((item, index) => {
+  item.trigger.addEventListener('click', () => {
     openLightbox(index);
   });
 });
@@ -156,7 +201,12 @@ stage.addEventListener('pointerdown', (event) => {
   touchStartY = event.clientY;
   touchDeltaX = 0;
   touchDeltaY = 0;
-  stage.setPointerCapture(event.pointerId);
+
+  try {
+    stage.setPointerCapture(event.pointerId);
+  } catch (error) {
+    console.warn('gallery.js: could not capture pointer, swipe may be interrupted', error);
+  }
 });
 
 stage.addEventListener('pointermove', (event) => {
@@ -170,7 +220,12 @@ stage.addEventListener('pointerup', (event) => {
   if (!isPointerDown) return;
 
   isPointerDown = false;
-  stage.releasePointerCapture(event.pointerId);
+
+  try {
+    if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+  } catch (error) {
+    console.warn('gallery.js: could not release pointer capture', error);
+  }
 
   const isHorizontalSwipe = Math.abs(touchDeltaX) > 50 && Math.abs(touchDeltaX) > Math.abs(touchDeltaY) * 1.2;
   if (!isHorizontalSwipe) return;

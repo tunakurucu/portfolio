@@ -413,42 +413,64 @@
 
   <script>
     // Yıl
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('y');
+    if(yearEl){ yearEl.textContent = new Date().getFullYear(); }
+    else { console.error('index.html: #y placeholder missing, footer year not rendered.'); }
 
     // Lightbox
-    const lb=document.getElementById('lb'); const lbImg=lb.querySelector('img');
-    document.querySelectorAll('.work').forEach(w=>{
-      w.addEventListener('click',e=>{e.preventDefault();lbImg.src=w.dataset.full;lb.classList.add('show');lb.focus()})
-    });
-    lb.addEventListener('click',()=>lb.classList.remove('show'));
-    window.addEventListener('keydown',e=>{if(e.key==='Escape') lb.classList.remove('show')});
+    const lb=document.getElementById('lb'); const lbImg=lb && lb.querySelector('img');
+    if(!lb || !lbImg){
+      console.error('index.html: lightbox markup (#lb > img) missing, gallery lightbox disabled.');
+    } else {
+      lbImg.addEventListener('error',()=>{
+        console.error(`index.html: failed to load lightbox image "${lbImg.getAttribute('src')}"`);
+        lbImg.alt='Görsel yüklenemedi.';
+      });
+      document.querySelectorAll('.work').forEach(w=>{
+        w.addEventListener('click',e=>{
+          e.preventDefault();
+          if(!w.dataset.full){ console.error('index.html: .work item without data-full, skipping', w); return; }
+          lbImg.alt='Büyük görsel';
+          lbImg.src=w.dataset.full;
+          lb.classList.add('show');
+          lb.focus();
+        })
+      });
+      lb.addEventListener('click',()=>lb.classList.remove('show'));
+      window.addEventListener('keydown',e=>{if(e.key==='Escape') lb.classList.remove('show')});
+    }
 
     // Logo → overlay
     const logoBtn = document.getElementById('logoBtn');
     const overlay = document.getElementById('navOverlay');
-    const chips = () => overlay.querySelectorAll('.chip');
 
     function closeOverlay(){ overlay.setAttribute('hidden',''); logoBtn.setAttribute('aria-expanded','false'); }
     function openOverlay(){ overlay.removeAttribute('hidden'); logoBtn.setAttribute('aria-expanded','true'); }
 
-    logoBtn.addEventListener('click',()=>{ overlay.hasAttribute('hidden') ? openOverlay() : closeOverlay(); });
-    overlay.addEventListener('click',e=>{ if(e.target===overlay) closeOverlay(); });
-    window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeOverlay(); });
-    window.addEventListener('scroll',()=>{ if(!overlay.hasAttribute('hidden')) closeOverlay(); }, {passive:true});
+    if(!logoBtn || !overlay){
+      console.error('index.html: #logoBtn or #navOverlay missing, navigation overlay disabled.');
+    } else {
+      logoBtn.addEventListener('click',()=>{ overlay.hasAttribute('hidden') ? openOverlay() : closeOverlay(); });
+      overlay.addEventListener('click',e=>{ if(e.target===overlay) closeOverlay(); });
+      window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeOverlay(); });
+      window.addEventListener('scroll',()=>{ if(!overlay.hasAttribute('hidden')) closeOverlay(); }, {passive:true});
 
-    // Chip tıklanınca → ilgili bölüme smooth scroll + overlay kapat
+      // Chip tıklanınca → ilgili bölüme smooth scroll + overlay kapat
+      overlay.addEventListener('click',e=>{
+        const a = e.target.closest('a[href^="#"]');
+        if(!a) return;
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        closeOverlay();
+        setTimeout(()=>smoothTo(id), 60);
+      });
+    }
+
     function smoothTo(id){
       const el=document.getElementById(id);
       if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      else { console.warn(`index.html: no element with id "${id}" to scroll to.`); }
     }
-    overlay.addEventListener('click',e=>{
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
-      e.preventDefault();
-      const id = a.getAttribute('href').slice(1);
-      closeOverlay();
-      setTimeout(()=>smoothTo(id), 60);
-    });
 
     // Sayfadaki diğer #link'ler için de smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
