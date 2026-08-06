@@ -1,0 +1,103 @@
+{
+  "galleries": [
+    {
+      "page": "portre.html",
+      "title": "Portre",
+      "description": "Doğal, stüdyo ve karakter odaklı portre çalışmaları.",
+      "assets": "assets/portfolio/portre"
+    },
+    {
+      "page": "etkinlik.html",
+      "title": "Motion",
+      "description": "Sahne, spor ve hareket odaklı fotoğraf seçkisi.",
+      "assets": "assets/portfolio/etkinlik",
+      "files": [
+        "p1-etkinlik-akv06779-1.jpg",
+        "p1-etkinlik-akv07455.jpg",
+        "p1-etkinlik-dsc01688-enhanced-nr.jpg",
+        "p1-etkinlik-dsc02008.jpg",
+        "p1-etkinlik-dsc04753-enhanced-nr.jpg",
+        "p1-etkinlik-dsc04926-enhanced-nr.jpg",
+        "p1-etkinlik-dsc05025.jpg",
+        "p1-etkinlik-dsc05054-enhanced-nr.jpg",
+        "p1-etkinlik-dsc05149.jpg",
+        "p1-etkinlik-dsc05411.jpg",
+        "p1-etkinlik-dsc05509.jpg",
+        "p1-etkinlik-dsc05700.jpg",
+        "p1-etkinlik-dsc05860.jpg",
+        "p1-etkinlik-dsc05889-enhanced-nr.jpg",
+        "p1-etkinlik-dsc06022.jpg",
+        "p1-etkinlik-dsc06025.jpg",
+        "p1-etkinlik-dsc06029.jpg",
+        "p1-etkinlik-dsc07663-original.jpg",
+        "p1-etkinlik-dsc09278.jpg",
+        "p1-etkinlik-img-0118.jpg",
+        "p1-etkinlik-genc-lt-link.jpg",
+        "p2-etkinlik-dsc00024-enhanced-nr.jpg",
+        "p2-etkinlik-dsc01894.jpg",
+        "p2-etkinlik-dsc01936.jpg",
+        "p2-etkinlik-dsc03216.jpg",
+        "p2-etkinlik-dsc05054-enhanced-nr-1.jpg",
+        "p2-etkinlik-dsc05155.jpg",
+        "p2-etkinlik-dsc05240.jpg",
+        "p2-etkinlik-dsc05393.jpg",
+        "p2-etkinlik-dsc05869-enhanced-nr.jpg",
+        "p2-etkinlik-dsc09393.jpeg",
+        "p2-etkinlik-dsc09399.jpeg",
+        "p2-etkinlik-dramatik-sar-kopya.jpg",
+        "p3-etkinlik-akv07450.jpg",
+        "p3-etkinlik-dsc00350-enhanced-nr-2.jpg",
+        "p3-etkinlik-dsc04922.jpg",
+        "p3-etkinlik-dsc05179.jpg",
+        "p3-etkinlik-dsc05847.jpg",
+        "p3-etkinlik-dsc05869-enhanced-nr-2.jpg",
+        "p3-etkinlik-dsc06042-enhanced-nr.jpg",
+        "p3-etkinlik-dsc06103.jpg",
+        "p3-etkinlik-dsc09994-enhanced-nr.jpg"
+      ]
+    },
+    {
+      "page": "sinema.html",
+      "title": "Sinema",
+      "description": "Kısa film, klip ve sinematik video işleri.",
+      "assets": "assets/portfolio/sinema"
+    },
+    {
+      "page": "videography.html",
+      "title": "Videography",
+      "description": "Kurumsal, sosyal medya ve kampanya odaklı video çalışmaları.",
+      "assets": "assets/portfolio/videography",
+      "sections": [
+        {
+          "directory": "hype",
+          "label": "Hype"
+        },
+        {
+          "directory": "kurumsal",
+          "label": "Kurumsal",
+          "files": [
+            "p3-videography-d-m-dogum-gunu.mp4",
+            "p3-videography-d-m-new-year.mp4",
+            "p3-videography-ckt-v1.mp4",
+            "p3-videography-kimmi-1.mp4",
+            "p3-videography-istikbal-x-society-subat-yatay-bs-reel.mp4"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "creative.html",
+      "title": "Creative",
+      "description": "Daha deneysel, stilize ve atmosfer odaklı görsel işler.",
+      "assets": "assets/portfolio/creative"
+    }
+  ],
+  "redirects": [
+    {
+      "page": "marka.html",
+      "title": "Videography",
+      "target": "videography.html",
+      "linkText": "Videography sayfasına gidin."
+    }
+  ]
+}

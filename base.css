@@ -1,0 +1,19 @@
+:root{
+  --bg:#070709;
+  --text:#f5f7fa;
+  --muted:#9aa0a6;
+  --line:#1c1f2a;
+  --panel:#0e0f14;
+  --card:#0e0f14;
+  --ring:rgba(255,255,255,.08);
+  --rgb1:#ff2d55;
+  --rgb2:#00e887;
+  --rgb3:#32a6ff;
+  --h-xl:clamp(26px, 6.2vw, 44px);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body{min-height:100vh}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}

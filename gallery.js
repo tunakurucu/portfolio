@@ -186,12 +186,12 @@ stage.addEventListener('pointercancel', () => {
   isPointerDown = false;
 });
 
+site.onEscape(() => {
+  if (isLightboxOpen()) closeLightbox();
+});
+
 window.addEventListener('keydown', (event) => {
   if (!isLightboxOpen()) return;
-
-  if (event.key === 'Escape') {
-    closeLightbox();
-  }
 
   if (event.key === 'ArrowLeft') {
     event.preventDefault();
